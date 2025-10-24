@@ -119,6 +119,7 @@ header
   color: white;
 }
 
+
 .hero .left {
   display: flex;
   justify-content: center;
@@ -131,16 +132,24 @@ header
 .hero .left h1 {
   font-size: 60px;
   font-weight: bold;
+  transition: 0.5s;
 }
 
-.hero .right {
-    height: 500px;
-    /* background-color: blue; */
-    
-    background-repeat: no-repeat;
-    background-position: center;  
-    background-size: cover;
+.hero .left h1:hover{
+    font-size: 80px;
 }
+.hero .right {
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  transition: background-size 0.5s ease;
+}
+
+.hero .right:hover {
+  background-size: 120%;
+}
+
 .car {
     height: 800px;
     width: 100%;
@@ -165,6 +174,7 @@ header
     color: white;
     font-size: 3rem;
 }
+
 /* Overlay */
     .transition-overlay {
       position: fixed;

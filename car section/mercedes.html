@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERCEDES</title>
+    <link rel="icon" type="image/x-icon" href="../assets/Stylized Monkey on Branch Logo.png">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins", sans-serif;
+
+        /* font-family: "Segoe UI", Arial, sans-serif; */
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: black;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(50px);
+        padding: 0.5rem 10%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 1;
+        align-items: center;
+    }
+
+    .carlogo {
+        font-size: 2rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .navbar a {
+        font-size: 1.5rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 300;
+        margin-left: 2.5rem;
+    }
+
+    .navbar a:hover {
+        color: #aaaaaa;
+    }
+    
+
+    .card {
+        margin-left: 55px;
+        margin-bottom: 20px;
+        display: block;
+        /* background-color: #515151; */
+        /* border-radius: 5px; */
+        overflow: hidden;
+        width: 350px;
+        /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); */
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .card .image img {
+        background-color: red;
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .card h1 {
+        font-size: 1.4rem;
+        margin: 20px;
+        color: white;
+        font-weight: 300;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+        color: #bbb;
+        margin-left: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.2rem;
+        color: #fff;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        color: white;
+        font-weight: 300;
+    }
+
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        gap: 15px;
+    }
+    
+</style>
+
+<body>
+    <header>
+        <a href="" class="carlogo">TarZan</a>
+
+        <nav class="navbar">
+
+            <a href="../index.html">Home</a>
+            <a href="car.html" style="text-decoration: underline;">Cars</a>
+        </nav>
+    </header>
+    <br><br><br>
+
+
+    <h1 style="color: white; margin-left: 57px; font-weight: 200; margin-bottom: 20px;">BMW MODELS</h1>
+    <section>
+        <div class="grid-container">
+            <a href="" class="card">
+                <div class="image">
+                    <img src="https://imgd.aeplcdn.com/1920x1080/n/cw/ec/131249/eqs-exterior-right-front-three-quarter-6.jpeg?isig=0&q=80&q=80"
+                        alt="BMW">
+                </div>
+                <h1>SEDAN EQX</h1>
+                <h3>2025</h3>
+                <h2>₹93.07Lakhs</h2>
+            </a>
+            <a href="" class="card">
+                <div class="image">
+                    <img src="https://di-uploads-pod3.dealerinspire.com/fletcherjonesmbnewport/uploads/2018/10/18.GLC63AMG.5-7-18-6-2.jpg"
+                        alt="BMW">
+                </div>
+                <h1>ESUV</h1>
+                <h3>2025</h3>
+                <h2>₹1.7crore</h2>
+            </a>
+            <a href="" class="card">
+                <div class="image">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/2020-audi-s5-sportback-164-hdr-1588268357.jpg?crop=0.663xw:0.560xh;0.313xw,0.428xh&resize=2048:*"
+                        alt="BMW">
+                </div>
+                <h1>CLE SportBack</h1>
+                <h3>2025</h3>
+                <h2>₹87.04Lakhs</h2>
+            </a>
+        </div>
+        
+    </section>
+
+    
+</body>
+
+</html>

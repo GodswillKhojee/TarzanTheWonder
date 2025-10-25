@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUV X5</title>
+    <link rel="icon" type="image/x-icon" href="../assets/Stylized Monkey on Branch Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins", sans-serif;
+
+        /* font-family: "Segoe UI", Arial, sans-serif; */
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: black;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(50px);
+        padding: 0.5rem 10%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 1;
+        align-items: center;
+    }
+
+    .carlogo {
+        font-size: 2rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .navbar a {
+        font-size: 1.5rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 300;
+        margin-left: 2.5rem;
+    }
+
+    .navbar a:hover {
+        color: #aaaaaa;
+    }
+
+    .car-model {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .car-model .image {
+        background-color: red;
+        width: 100%;
+        height: 95vh;
+        background-size: cover;
+        /* display: block; */
+    }
+
+    .car-model .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* maintains aspect ratio, fills container */
+        object-position: center;
+        /* centers image */
+        display: block;
+    }
+
+    .car-text {
+        position: absolute;
+        bottom: 20px;
+        left: 50px;
+        color: white;
+    }
+
+    .ic {
+        display: flex;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 20px;
+    }
+
+    .car-title {
+        color: white;
+        font-weight: 200;
+        font-size: 2.5rem;
+    }
+
+    .car-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        /* controls how much area fades */
+        background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+        pointer-events: none;
+    }
+
+    section {
+        /* background-color:red ; */
+        width: 100%;
+        height: auto;
+        display: flex;
+    }
+
+    section .left-info {
+        /* background-color: yellow; */
+        width: 50%;
+        color: white;
+        padding: 47px;
+
+    }
+
+    section .right-info {
+        width: 50%;
+        color: white;
+        padding: 47px;
+    }
+
+
+    .spec-info {
+        margin-bottom: 50px;
+    }
+
+    .spec-info h5 {
+        color: grey;
+    }
+
+    .spec-info h3 {
+        font-weight: 200;
+        /* color: blue; */
+    }
+
+    .price-tag {
+        background-color: #101727;
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        padding: 50px;
+        margin-top: 30px;
+
+    }
+
+    .price-tag a 
+    {
+        display: inline-block;
+        background-color: black;
+        color: white;
+        padding: 20px 20px;
+        border-radius:5px;
+        text-decoration: none;
+        font-weight: 300;
+        transition: 0.3s
+    }
+    .price-tag a:hover
+    {
+        padding: 20px 200px;
+        color: black;
+        background-color: white;
+    }
+</style>
+
+<body>
+    <header>
+        <a href="" class="carlogo">TarZan</a>
+
+        <nav class="navbar">
+
+            <a href="../index.html">Home</a>
+            <a href="../car.html" style="text-decoration: underline;">Cars</a>
+        </nav>
+    </header>
+    <br><br>
+
+
+    <div class="car-model">
+        <div class="image">
+            <img src="https://autolivenews.com/wp-content/uploads/2024/08/Plain-50.webp"
+                alt="">
+        </div>
+
+
+        <div class="car-overlay"></div>
+
+        <div class="car-text">
+            <a href="../car section/bmw.html" class="ic">
+                <i class="fa-solid fa-arrow-left" style="margin-top: 6px;"></i>
+                <h3 style="font-weight: 400; margin-left: 10px;">Back to BMW's Models</h3>
+            </a>
+
+            <h1 class="car-title">SEDAN 7 SERIES</h1>
+        </div>
+    </div>
+
+
+
+
+    <section>
+        <div class="left-info">
+            <h1 style="font-weight: 300; margin-bottom: 50px;">Specification</h1>
+            <div class="spec-info">
+    <h5 style="font-weight: 300;">Engine</h5>
+    <h3>2998 cc 6-cylinder TwinPower Turbo</h3>
+    <hr style="border: 1px solid gray; width: 100%;">
+</div>
+
+<div class="spec-info">
+    <h5 style="font-weight: 300;">Horsepower</h5>
+    <h3>375 hp @ 5,200 rpm</h3>
+    <hr style="border: 1px solid gray; width: 100%;">
+</div>
+
+<div class="spec-info">
+    <h5 style="font-weight: 300;">Transmission</h5>
+    <h3>8-speed automatic with Steptronic</h3>
+    <hr style="border: 1px solid gray; width: 100%;">
+</div>
+
+<div class="spec-info">
+    <h5 style="font-weight: 300;">Fuel Type</h5>
+    <h3>Petrol / Plug-in Hybrid (varies by model)</h3>
+    <hr style="border: 1px solid gray; width: 100%;">
+</div>
+
+<div class="spec-info">
+    <h5 style="font-weight: 300;">Top Speed</h5>
+    <h3>250 km/h</h3>
+    <hr style="border: 1px solid gray; width: 100%;">
+</div>
+
+<div class="spec-info">
+    <h5 style="font-weight: 300;">Acceleration (0–100 km/h)</h5>
+    <h3>5.4 seconds</h3>
+    <hr style="border: 1px solid gray; width: 100%;">
+</div>
+
+
+
+
+
+        </div>
+        <div class="right-info">
+            <h1 style="font-weight: 300; margin-bottom: 50px;">Overview</h1>
+            <p style="color: gray;">The BMW M4 Competition combines breathtaking performance with sophisticated luxury.
+                Experience pure driving pleasure with its powerful engine and precision handling.</p>
+
+            <div class="price-tag">
+                <h3 style="font-weight: 200;">Staring Price</h3>
+                <hr>
+                <br>
+                <h1 style="font-weight: 400; font-size: 50px;">₹1.79 Cr</h1>
+            </div>
+
+            <div class="price-tag">
+                <h4 style="font-weight: 300; ">Interested in this Vehicle?</h4>
+                <br>
+                <p style="color: rgb(162, 162, 162); font-weight: 200;">Contact Our Sales Team for Test Drive or more
+                    Information</p>
+                <hr>
+                <br>
+
+                <a href="testDrive.html">
+                    Schedule Test Drive
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

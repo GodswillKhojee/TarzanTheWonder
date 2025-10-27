@@ -1,109 +1,93 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>signin</title>
-    <link rel="stylesheet" href="signin.css">
-    <link rel="icon" type="image/x-icon" href="assets/Stylized Monkey on Branch Logo.png">
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign In | TarZan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="script.js"></script>
+</head>
+<body class="bg-[#000] text-white min-h-screen flex flex-col">
 
-  </head>
-  <body>
-    <header>
-      <a href="index.html" class="carlogo">TarZan</a>
+  <!-- HEADER (fixed) -->
+  <header class="fixed top-0 left-0 w-full bg-black/10 backdrop-blur-2xl px-[10%] py-2 flex justify-between items-center z-10">
+    <a href="#" class="text-white text-2xl font-semibold tracking-wide">TarZan</a>
+    <nav class="flex space-x-10 text-white text-lg font-light">
+      <a href="index.html" class="underline hover:text-gray-400 transition">Home</a>
+      <a href="#about" class="hover:text-gray-400 transition">About Us</a>
+      <a href="signup.html" class="hover:text-gray-400 transition">Cars</a>
+      <a href="contactus.html" class="hover:text-gray-400 transition">Contact Us</a>
+      <a href="privacy.html" class="hover:text-gray-400 transition">Privacy Policy</a>
+      <a href="services.html" class="hover:text-gray-400 transition">Our Services</a>
+    </nav>
+  </header>
 
+  <!-- MAIN
+       Add top padding equal to header height so content isn't hidden behind the fixed header.
+       Using responsive padding ensures consistency across devices.
+  -->
+  <main class="flex-1 bg-[#333] pt-20 pb-16"> <!-- pt-20 to clear fixed header -->
+    <div class="max-w-md mx-auto px-6">
+      <!-- Card -->
+      <div class="bg-black p-8 rounded-2xl shadow-lg mt-6">
+        <!-- Title -->
+        <h1 class="text-5xl font-bold text-center mb-6">Sign In</h1>
 
-      <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="index.html">About Us</a>
-        <a href="">Car</a>
-        <a href="contactus.html">Contact Us</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="services.html">Our Services</a>
-      </nav>
-    </header>
+        <!-- Form -->
+        <form id="signinForm" class="space-y-5">
+          <!-- Mobile -->
+          <div>
+            <label for="signinMobile" class="block text-sm mb-1">Mobile No.</label>
+            <input id="signinMobile" name="signinMobile" type="tel" maxlength="10" required
+              class="w-full bg-[#333] border-b border-gray-500 focus:outline-none py-2 px-1 text-white" />
+          </div>
 
-    <section>
-        <div class="head">Sign In</div>
+          <!-- Password -->
+          <div>
+            <label for="signinPassword" class="block text-sm mb-1">Password</label>
+            <input id="signinPassword" name="signinPassword" type="password" required
+              class="w-full bg-[#333] border-b border-gray-500 focus:outline-none py-2 px-1 text-white" />
+          </div>
 
-      <div class="form">
-        <form action="#">
-          <!-- Email -->
+          <!-- Sign In Button -->
+          <button type="submit" class="w-full bg-gray-700 hover:bg-gray-800 py-3 rounded-md text-white font-semibold">
+            Sign In
+          </button>
 
-          <label for="email">Email</label>
-          <input type="email" id="name" required>
-
-          <br>
-
-          <label for="password">Password</label>
-          <input type="password" id="name" required>
-
-          <!-- Submit Button -->
-          <button type="submit" class="submit-btn">Sign In</button>
+          <!-- Links -->
+          <p class="text-center text-gray-300 text-sm">
+            Don't have an account?
+            <a href="signup.html" class="text-white underline hover:text-gray-400">Sign Up</a>
+          </p>
         </form>
+      </div>
+    </div>
+  </main>
 
-        <div class="extra">
-          Do not Have Accout? <a href="signup.html">Sign Up</a>
+  <!-- FOOTER -->
+  <footer class="w-full bg-black text-white py-10 select-none">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-[10%]">
+      <!-- Left -->
+      <div class="space-y-6">
+        <a href="#" class="text-2xl font-semibold tracking-wide block">TarZan</a>
+        <div class="space-y-3">
+          <p class="text-gray-300">123-456-8790</p>
+          <a href="mailto:tarzancars@tarzan.com" class="text-gray-300 hover:text-gray-400 transition">
+            tarzancars@tarzan.com
+          </a>
+          <p class="text-gray-400 leading-relaxed">Address: We are from somewhere on the map of not this world.</p>
         </div>
       </div>
-      </section>
 
-    <footer style="user-select: none;">
-      <div class="footlogo">
-        <a href="#">TarZan</a>
-        <br><br><br><br><br><br>
-        <p>123-456-8790</p>
-        <a top: 32px;color: white;" href="mailto:someone@something.com">tarzancars@tarzan.com</a>
-        <br><br><br>
-        <p>Address:- we are from somewhere on the map of not this world.</p>
+      <!-- Right -->
+      <div class="flex flex-col items-center md:items-end justify-between space-y-6">
+        <a href="#"><img src="assets/Stylized Monkey on Branch Logo.png" alt="Tarzan Logo" class="h-24 w-24 object-contain" /></a>
+        <div class="flex space-x-8 text-gray-300">
+          <a href="privacy.html" class="hover:text-gray-400 transition">Privacy Policy</a>
+          <a href="blog.html" class="hover:text-gray-400 transition">Blog</a>
+        </div>
       </div>
-
-      
-      
-      <div class="footother">
-        <a href="#"><img src="assets/Stylized Monkey on Branch Logo.png" alt=""></a>
-        <br><br><br><br>
-        <a class="pp" href="privacy.html">Privacy Policy</a>
-        <br>
-        <a class="pp" href="blog.html" style="position: relative; left: 670px;">Blog</a>
-      </div>
-    </footer>
-<div class="transition-overlay start"></div>
-
-<script>
-  const overlay = document.querySelector(".transition-overlay");
-
-  // On page load: slide out overlay
-  window.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-      overlay.classList.remove("start");
-      overlay.classList.add("hide");
-    }, 500);
-  });
-
-  // Handle all clicks on links or buttons with data-target
-  document.addEventListener("click", (e) => {
-    const target = e.target;
-
-    // Check for <a> with href OR <button> with data-target
-    if ((target.tagName === "A" && target.href) || 
-        (target.tagName === "BUTTON" && target.dataset.target)) {
-      
-      e.preventDefault(); // prevent default navigation
-
-      // Show overlay
-      overlay.classList.remove("hide");
-      overlay.classList.add("active");
-
-      // Get destination URL
-      const url = target.tagName === "A" ? target.href : target.dataset.target;
-
-      // Navigate after transition
-      setTimeout(() => {
-        window.location.href = url;
-      }, 800); // match CSS transition
-    }
-  });
-</script>
-  </body>
-  </html>
+    </div>
+  </footer>
+</body>
+</html>

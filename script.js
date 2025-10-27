@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const parsed = JSON.parse(fallback);
           if (parsed.mobile === mobile && parsed.password === password) {
             alert(`Welcome back, ${parsed.fullName}!`);
-            return (window.location.href = "index.html");
+            return (window.location.href = "car.html");
           }
         }
         return alert("No account found for this mobile number.");
@@ -113,7 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (user.password !== password) return alert("Incorrect password.");
       alert(`Welcome back, ${user.fullName}!`);
       // successful login - redirect
-      window.location.href = "index.html";
+      window.location.href = "car.html";
     });
   }
 });
+

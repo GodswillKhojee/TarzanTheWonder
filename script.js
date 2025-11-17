@@ -1,15 +1,14 @@
-// script.js — unified and fixed auth logic
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Elements (some pages may not have all of these elements)
+  // Elements 
   const sendOtpBtn = document.getElementById("sendOtpBtn") || document.getElementById("sendOtp");
   const signupForm = document.getElementById("signupForm");
   const signinForm = document.getElementById("signinForm");
 
-  // OTP logic (demo)
+  // OTP logic 
   if (sendOtpBtn) {
     sendOtpBtn.addEventListener("click", () => {
-      // try several possible mobile input IDs
+      
       const mobileInput =
         document.getElementById("mobile") ||
         document.getElementById("signinMobile") ||

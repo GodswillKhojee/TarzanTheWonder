@@ -28,24 +28,25 @@
 
     // Page Transition Overlay
     const overlay = document.querySelector(".transition-overlay");
-    const links = document.querySelectorAll("a"); // all links and nav buttons
+    const links = document.querySelectorAll("a"); 
+    // all links and nav buttons
 
     links.forEach(link => {
       link.addEventListener("click", function (e) {
         const target = this.getAttribute("href");
 
-        // ✅ Skip transition for "About Us" button (scroll within same page)
+        //  Skip transition for About Us
         if (target === "#about") {
-          return; // allow normal scrolling
+          return; 
         }
 
-        // ✅ If it's not "#about", play transition
-        e.preventDefault(); // stop default navigation
+        //  If it's not about, play transition
+        e.preventDefault(); 
         overlay.classList.add("active");
 
         // after animation, navigate
         setTimeout(() => {
           window.location.href = target;
-        }, 800); // must match CSS transition time
+        }, 800); 
       });
     });

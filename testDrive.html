@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Test Drive</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    /* ============================================================
+   GLOBAL
+============================================================ */
+    body {
+        margin: 0;
+        background: #000;
+        font-family: Poppins, sans-serif;
+        color: #fff;
+    }
+
+    /* Animations */
+    .fade-in {
+        animation: fade 1.2s ease forwards;
+        opacity: 0;
+    }
+
+    .slide-left {
+        animation: slideLeft 1.2s ease forwards;
+        opacity: 0;
+    }
+
+    .slide-right {
+        animation: slideRight 1.2s ease forwards;
+        opacity: 0;
+    }
+
+    .zoom-in {
+        animation: zoom 1.2s ease forwards;
+        opacity: 0;
+    }
+
+    @keyframes fade {
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-60px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideRight {
+        from {
+            opacity: 0;
+            transform: translateX(60px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes zoom {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* ============================================================
+   NAVBAR
+============================================================ */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        background-color: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(50px);
+        padding: 0.5rem 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .carlogo {
+        font-size: 2rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .navbar a {
+        font-size: 1.5rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 300;
+        margin-left: 2.5rem;
+    }
+
+    .navbar a:hover {
+        color: #aaaaaa;
+    }
+
+    /* ============================================================
+   LAYOUT
+============================================================ */
+
+    .container {
+        display: flex;
+        justify-content: center;
+        /* width: 100%; */
+        margin-top: 50px;
+        padding: 40px;
+        display: grid;
+        grid-template-columns: 1fr 480px;
+        gap: 30px;
+    }
+
+    .hero-img {
+        width: 100%;
+        height: 1009px;
+        object-fit: cover;
+        border-radius: 12px;
+        filter: brightness(0.6);
+    }
+
+    .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50px;
+        transform: translateY(-50%);
+    }
+
+    .hero-text h1 {
+        font-size: 44px;
+        margin: 0;
+    }
+
+    .hero-text p {
+        margin-top: 10px;
+        color: #cfd6df;
+    }
+
+    /* ============================================================
+   FORM
+============================================================ */
+
+    .right {
+
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 12px;
+        padding: 30px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input,
+    select,
+    textarea {
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        background: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+    }
+    select
+    {
+        background-color: #222222; /* Dark dropdown */
+  color: #ffffff; /* White text */
+    }
+    select option
+    {
+        background: rgba(255, 255, 255, 0.08);
+        color: white;
+    }
+
+    textarea {
+        height: 90px;
+    }
+
+    .row {
+        display: flex;
+        gap: 12px;
+    }
+
+    /* .half {
+        flex: 1;
+    } */
+
+    .btn {
+        width: 40%;
+        padding: 14px;
+        border-radius: 8px;
+        border: none;
+        background: #fff;
+        color: #000;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: 0.3s ease;
+    }
+
+    .btn:hover {
+        background: rgb(40, 40, 40);
+        color: white;
+        width: 100%;
+    }
+
+    .note {
+        text-align: center;
+        color: #b8c3cd;
+        margin-top: 12px;
+        font-size: 13px;
+    }
+
+    .success-message {
+        display: none;
+        background: #00ff99;
+        color: #000;
+        padding: 12px;
+        text-align: center;
+        margin-top: 20px;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer
+ {
+    width: 100%;
+    height: 400px;
+    /* background-color: black; */
+ }
+.footlogo
+{
+    width: 50%;
+    height: 400px;
+    background-color: #000;
+    
+}
+.footlogo a
+{
+    position: relative;
+    left: 56px;
+    top: 32px;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    user-select: none;  
+    
+}
+.footlogo p
+{
+    position: relative;
+    left: 56px;
+    top: 32px;
+    color: white; 
+}
+
+.footother
+{
+    position: relative;
+    background-color: black;
+    width: 50%;
+    height: 400px;
+    bottom: 400px;
+    left: 50%;
+
+}
+
+.footother img
+{
+    height: 100px;
+    width: 100px;
+    position: relative;
+    left: 630px;
+    top: 8px;
+}
+.footother .pp  
+{
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    left: 600px;
+}
+</style>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <a href="#" class="carlogo">TarZan</a>
+
+        <nav class="navbar">
+            <a href="index.html" >Home</a>
+
+            <a href="car.html">Cars</a>
+            
+        </nav>
+    </header>
+
+    <!-- MAIN SECTION -->
+    <section class="container">
+
+        <!-- LEFT SIDE -->
+        <div class="left slide-left">
+            <img src="https://images.unsplash.com/photo-1542242476-5a3565835a38?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="hero-img" alt="Car Interior">
+
+            <div class="hero-text zoom-in">
+                <h1>Experience Excellence</h1>
+                <p>Book your test drive today</p>
+            </div>
+        </div>
+
+        <!-- RIGHT FORM -->
+        <div class="right slide-right">
+            <form id="testDriveForm" class="form" action="/submit-test-drive" method="POST">
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="fullname" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Car Brand</label>
+                    <select name="brand" required>
+                        <option>AUDI</option>
+                        <option>BMW</option>
+                        <option>Mercedes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Car Model</label>
+                    <select name="model" required>
+                        <option>A4 Sedan</option>
+                        <option>A6 Sedan</option>
+                        <option>Q3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Color</label>
+                    <select name="color" required>
+                        <option disabled selected>Select a color</option>
+                        <option>Black</option>
+                        <option>White</option>
+                        <option>Red</option>
+                        <option>Blue</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="form-group half">
+                        <label>Preferred Date</label>
+                        <input type="date" name="date" required>
+                    </div>
+
+                    <div class="form-group half">
+                        <label>Preferred Time</label>
+                        <input type="time" name="time" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Additional Comments</label>
+                    <textarea name="comments"></textarea>
+                </div>
+
+                <button type="submit" class="btn">Schedule Test Drive</button>
+                <p class="note">By submitting this form, you agree to be contacted by our sales team.</p>
+            </form>
+
+            <div id="successMessage" class="success-message">✔ Test Drive Scheduled Successfully!</div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="user-select: none;">
+        <div class="footlogo">
+            <a href="#">TarZan</a>
+            <br><br><br><br><br><br>
+            <p>123-456-8790</p>
+            <a top: 32px;color: white; href="mailto:someone@something.com">tarzancars@tarzan.com</a>
+            <br><br><br>
+            <p>Address:- we are from somewhere on the map of not this world.</p>
+        </div>
+
+        <div class="footother">
+            <a href="#"><img src="assets/Stylized Monkey on Branch Logo.png" alt=""></a>
+            <br><br><br><br>
+            <a class="pp" href="privacy.html">Privacy Policy</a>
+            <br>
+            <a class="pp" href="blog.html" style="position: relative; left: 670px;">Blog</a>
+        </div>
+    </footer>
+    <script>const form = document.getElementById("testDriveForm");
+        const successMessage = document.getElementById("successMessage");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const data = new FormData(form);
+
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: data
+            });
+
+            if (response.ok) {
+                successMessage.style.display = "block";
+                form.reset();
+
+                setTimeout(() => {
+                    successMessage.style.display = "none";
+                }, 3000);
+            } else {
+                alert("Error submitting form. Please try again.");
+            }
+        });
+    </script>
+</body>
+
+</html>
